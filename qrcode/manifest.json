@@ -1,0 +1,20 @@
+{ 
+    "manifest_version": 2,
+    "name": "QR Code Generator",
+    "version": "1.0",
+    "description": "QR Code Generator.",
+    "browser_action": {
+        "default_icon": "qrcode.png",
+        "default_title": "QR Code Generator",
+        "default_popup": "popup.html"
+    }, 
+    "permissions": [
+        "tabs"
+    ], 
+    "content_scripts": [{
+         "matches": ["http://*/*","https://*/*"],
+         "js": ["qrcode.min.js","popup.js"],   
+         "run_at": "document_start",
+         "all_frames": true
+    }] 
+}

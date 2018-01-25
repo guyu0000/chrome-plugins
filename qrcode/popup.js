@@ -1,4 +1,4 @@
-window.onload = function () {
+(function() {
 	var qrcode = new QRCode('qrcode', {
         width: 180,
         height: 180,
@@ -11,8 +11,8 @@ window.onload = function () {
 		qrcode.clear();
 		qrcode.makeCode(url);
 	};
-
+	
 	chrome.tabs.getSelected(null, function(tab) {
 		makeCode(tab.url);
 	});
-};
+})();
